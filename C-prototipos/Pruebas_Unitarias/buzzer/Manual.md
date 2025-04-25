@@ -11,13 +11,20 @@
 
 ### Loop
 
-  if (Serial.available()) {
-    String cmd = Serial.readStringUntil('\n');
-    cmd.trim();       
-    // mensajes de referencia: 100, 200, 300. Los cambiaremos proximametne
-    if      (cmd == "100") buzzerSetLevel(A_LOW);
-    else if (cmd == "200") buzzerSetLevel(A_MEDIUM);
-    else if (cmd == "300") buzzerSetLevel(A_HIGH);
-    else                   buzzerSetLevel(A_NONE);
-  }
+    if      (cmd == "100") { 
+      currentAlarm = A_LOW; 
+      Serial.println("Alarma nivel bajo activada"); 
+    }
+    else if (cmd == "200") { 
+      currentAlarm = A_MEDIUM; 
+      Serial.println("Alarma nivel medio activada"); 
+    }
+    else if (cmd == "300") { 
+      currentAlarm = A_HIGH; 
+      Serial.println("Alarma nivel alto activada"); 
+    }
+    else { 
+      currentAlarm = A_NONE; 
+      Serial.println("Alarma desactivada"); 
+    }
   buzzerUpdate();

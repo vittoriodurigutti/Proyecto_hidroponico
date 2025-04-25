@@ -2,9 +2,9 @@
 
 ### Definiciones pre setup
 
-  #include "sr04/sr04.h"
-  #define TRIG_PIN 5
-  #define ECHO_PIN 18
+    #include "sr04/sr04.h"
+    #define TRIG_PIN 5
+    #define ECHO_PIN 18
 
 ### Setup
 
